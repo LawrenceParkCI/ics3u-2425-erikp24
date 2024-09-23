@@ -21,7 +21,8 @@ public class AboutMe {
 		System.out.println("Teacher: Ms Kemp");
 		System.out.println("School: Lawrence Park Collegiate institute");
 		System.out.println("\"go panthers\"\n");
-		System.out.format("Day 1: %15sDay 2:","");
+		System.out.format("%15s Day 1: %15sDay 2:","","");
+		System.out.format("\nPeriod 1\n\nPeriod 2\n\nPeriod 3\n\nPeriod 4 %15s","");
 		
 	}
 

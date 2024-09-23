@@ -1,4 +1,7 @@
 package unit1;
+
+import java.text.Format;
+
 /**
  * Description: A program which states my name, grade, teacher and school. <br>
  * <br>
@@ -17,6 +20,9 @@ public class AboutMe {
 		System.out.println("Grade: grade 11");
 		System.out.println("Teacher: Ms Kemp");
 		System.out.println("School: Lawrence Park Collegiate institute");
+		System.out.println("\"go panthers\"\n");
+		System.out.format("Day 1: %15sDay 2:","");
+		
 	}
 
 }

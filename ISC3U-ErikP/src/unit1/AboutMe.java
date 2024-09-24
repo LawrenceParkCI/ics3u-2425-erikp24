@@ -28,7 +28,6 @@ public class AboutMe {
 		System.out.format("\n\n11:40-12:40|%1sLunch%12sLunch%13sLunch%14sLunch%15sLunch%5s|\"Late Start\" 12-01:00","","","","","","");
 		System.out.format("\n\n12:40-01:55|%1sEnglish%10sFunctions%9sEnglish%12sFunctions%11sEnglish%3s|\"Late Start\" 01:00-02:05","","","","","","");
 		System.out.format("\n\n01:55-03:15|%1sFunctions%8sEnglish%11sFunctions%10sEnglish%13sFunctions%1s|\"Late Start\" 01:00-02:05","","","","","","");
-		
 	}
 
 }

@@ -12,13 +12,14 @@ public class Bingo {
 		/*
 		 * The code below should print the rules of the game "Bingo"
 		 */
+		System.out.format("%37s|Bingo Rules:|\n\n","");
 		System.out.println("1.\t The caller randomly pulls a numbered Bingo ball\n\n");
 		System.out.println("2.\t The number is placed on the Bingo board and called out\n\n");
 		System.out.println("3.\t Players look for the called number on their Bingo card\n\n");
 		System.out.println("4.\t If the number is located, it is marked off\n\n");
 		System.out.println("5.\t Steps 1 - 4 are repeated until a player matches the Bingo pattern\n\n");
 		System.out.println("6.\t The winning player yells BINGO!\n\n");
-		System.out.println("Bingo card:\n\n");
+		System.out.format("%38sBingo card:\n\n","");
 		/*
 		 * The code below should print in the console a Bingo chart consisting of five rows and columns.
 		 */

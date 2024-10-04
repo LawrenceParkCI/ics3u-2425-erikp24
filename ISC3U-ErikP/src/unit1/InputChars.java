@@ -1,7 +1,11 @@
 package unit1;
 
 import java.util.Scanner;
-
+/**
+ * Date: Fri, Oct 4, 2024 <br>
+ * Description: A program which prints out characters either in their literal or ASCII value
+ * @author Erik Porteu
+ */
 public class InputChars {
 
 	public static void main(String[] args) {

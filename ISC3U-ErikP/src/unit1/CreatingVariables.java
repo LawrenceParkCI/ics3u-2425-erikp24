@@ -17,6 +17,10 @@ public class CreatingVariables {
 		int squareSide;
 		squareSide = 25;
 		System.out.println("The area of a square with a side of "+ squareSide +" units is: "+ squareSide*squareSide +" units.");
+		int number;
+		number = 4;
+		System.out.println("\n"+ Math.sqrt(number));
+		
 	}
 
 }

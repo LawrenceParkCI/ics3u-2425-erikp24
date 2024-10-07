@@ -11,18 +11,18 @@ public class Carpet {
  */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int length, width, carpetFlatPrice;
+		double length, width, carpetFlatPrice;
 		
 		System.out.println("Please enter the length (m) of your room and hit <Enter>");
-		length = sc.nextInt();
+		length = sc.nextDouble();
 		
 		System.out.println("Please enter the width (m) of your room and hit <Enter>");
-		width = sc.nextInt();
+		width = sc.nextDouble();
 		
 		System.out.println("Please enter the price ($) of the carpet per square meter (m^2) and hit <Enter>");
-		carpetFlatPrice = sc.nextInt();
+		carpetFlatPrice = sc.nextDouble();
 		
-		int carpetPrice = (int) (length * width) * carpetFlatPrice;
+		int carpetPrice = (int) ((double) (length * width) * carpetFlatPrice);
 		
 		System.out.println("The price to carpet your room is: $" + carpetPrice);
 		

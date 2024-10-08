@@ -16,7 +16,7 @@ public class NetPay {
 		double netPay = (double) ((hours * wage - insurance) - tax*(hours * wage - insurance));
 		
 		// This code prints out the total netPay
-		System.out.println("Therefore, your netPay is: " + netPay + "$");
+		System.out.println("Therefore, your netPay is: $" + netPay);
 
 	}
 

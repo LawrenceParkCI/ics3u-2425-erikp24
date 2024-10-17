@@ -1,9 +1,9 @@
 package unit1;
 
 /**
-* Description:
-* Date:
-* @author 
+* Description: A program which explores the properties of commenting <br>
+* Date: Thurs, Oct 17, 2024
+* @author Erik Porteu
 */
 public class Commenting {
   
@@ -47,15 +47,15 @@ public class Commenting {
 
 
     int num1 = 20;
-    double num2 = 36.2;
+    double num2 = 36.2; 
     String stringNum = "";
-
+    
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+ w   * num1              |20
+     * num2              |36.2
+    * stringNum         |0
     */
 
     num1 += 20;
@@ -67,9 +67,9 @@ public class Commenting {
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+    * num1              |52
+    * num2              |-16.0
+    * stringNum         |52 -16.0
     */
 
     num2 /= 2.5;
@@ -77,13 +77,12 @@ public class Commenting {
     stringNum = stringNum + "; ";
     stringNum = stringNum + num1 + " " + num2;
 
-
     /*
     * Variables Name    |   Value
     * ---------------------------------
-    * num1              |
-    * num2              |
-    * stringNum         |
+    * num1              |-6.4
+    * num2              |26
+    * stringNum         |52 -16.0; 26 -6.4
     */
   }
 }

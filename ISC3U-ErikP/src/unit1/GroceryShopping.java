@@ -23,7 +23,7 @@ public class GroceryShopping {
 		String personName = personNames[randomIndex];
 
 		Scanner sc =  new Scanner(System.in);
-
+		
 		// This block is declaring most of my variables.
 		String item1, item2;
 		double itemPrice1, itemPrice2;
@@ -72,15 +72,15 @@ public class GroceryShopping {
 
 		// This block is assigning numerical formats to variables.
 		NumberFormat money = NumberFormat.getCurrencyInstance();
-		NumberFormat percent = NumberFormat.getPercentInstance();
+		NumberFormat percentage = NumberFormat.getPercentInstance();
 		
-		System.out.format("\n%19s|%20s|%19s|%18s\n", "Item", "Price", "Quant.","Total");
+		System.out.format("\n%19s|%20s|%19s|%18s\n", "Item   ", "Price   ", "Quant.   ","Total   ");
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.format("%-19s|%20s|%19d|%18s\n", item1, money.format(itemPrice1), itemAmnt1, money.format(itemTotalPrice1));
 		System.out.format("%-19s|%20s|%19d|%18s\n", item2, money.format(itemPrice2), itemAmnt2, money.format(itemTotalPrice2));
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.format("\n%61s%18s","Subtotal:",money.format(cost));
-		System.out.format("\n%61s%18s","Tax:",money.format(taxAmnt));
+		System.out.format("\n%61s%18s","Tax ("+ percentage.format(tax)+"):",money.format(taxAmnt));
 		System.out.format("\n%61s%18s","Total:",money.format(total));
 		System.out.format("\n\n%63s","Thank you for shopping at " + personName + "'s groceries. Come again!");
 	}

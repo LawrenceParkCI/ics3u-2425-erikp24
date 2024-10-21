@@ -18,7 +18,6 @@ public class GroceryShopping {
 		// This code assigns and lists the possible values of compliments 1 and 2.
 		String[] compliments = {"Amazing.", "Perfect.", "Great."};
 		
-		
 		// This code creates a random object.
 		Random random = new Random();
 		

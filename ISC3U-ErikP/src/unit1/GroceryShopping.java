@@ -7,28 +7,28 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class GroceryShopping {
-/**
- * Date: Mon, Oct 21, 2024<br>
- * Description: A program which asks the user for price and quantity of two items at a grocery store and prints the receipt.
- * @author Erik Porteu
- * @param args 
- */
+	/**
+	 * Date: Mon, Oct 21, 2024<br>
+	 * Description: A program which asks the user for price and quantity of two items at a grocery store and prints the receipt.
+	 * @author Erik Porteu
+	 * @param args 
+	 */
 	public static void main(String[] args) {
 
 		// This code assigns and lists the possible values of compliments 1 and 2.
 		String[] compliments = {"Amazing.", "Perfect.", "Great."};
-		
+
 		// This code creates a random object.
 		Random random = new Random();
-		
+
 		// This code generates a random index from 0 to 2 for compliments 1 and 2.
 		int randomIndex = random.nextInt(compliments.length);
-		
+
 		// This code assigns a random string to compliment
 		String compliment = compliments[randomIndex];
 
 		Scanner sc =  new Scanner(System.in);
-		
+
 		// This block is declaring most of my variables.
 		String item1, item2, personName = "Erik";
 		double itemPrice1, itemPrice2;
@@ -47,7 +47,7 @@ public class GroceryShopping {
 		System.out.println(compliment);
 
 		// This block is asking for your second grocery item.
-		System.out.print("What would you like to purchase?: ");
+		System.out.print("\nWhat would you like to purchase?: ");
 		item2 = sc.nextLine();
 		System.out.print("How much does it cost?: ");
 		itemPrice2 = sc.nextDouble();
@@ -79,11 +79,11 @@ public class GroceryShopping {
 		double total = cost + cost*tax, taxAmnt = cost*tax;
 		int roundedTotalInt = (int) Math.round(total);
 		double roundedTotalFlt = Math.round(total*20.0)/20.0;
-		
+
 		// This block is assigning numerical formats to variables.
 		NumberFormat money = NumberFormat.getCurrencyInstance();
 		NumberFormat percentage = NumberFormat.getPercentInstance();
-		
+
 		System.out.format("\n%19s|%20s|%19s|%18s\n", "Item   ", "Price   ", "Quantity   ","Total   ");
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.format("%-19s|%20s|%19d|%18s\n", item1, money.format(itemPrice1), itemAmnt1, money.format(itemTotalPrice1));

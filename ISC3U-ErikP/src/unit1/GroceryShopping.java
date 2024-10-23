@@ -30,7 +30,8 @@ public class GroceryShopping {
 		Scanner sc =  new Scanner(System.in);
 
 		// This block is declaring most of my variables.
-		String item1, item2, personName = "Erik";
+		String item1, item2;
+		final String personName = "Erik";
 		double itemPrice1, itemPrice2;
 		int itemAmnt1, itemAmnt2;
 
@@ -57,9 +58,9 @@ public class GroceryShopping {
 
 		sc.close();
 
-		System.out.println("this is your receipt:\n\n\n");
+		System.out.println("\nthis is your receipt:\n\n\n");
 
-		System.out.format("%30s"+ personName + "'s Groceries\n\n", "");
+		System.out.format("%30s" + personName + "'s Groceries\n\n", "");
 
 		/*
 		 * This block is fetching the date and time values from my computer.
@@ -83,7 +84,8 @@ public class GroceryShopping {
 		// This block is assigning numerical formats to variables.
 		NumberFormat money = NumberFormat.getCurrencyInstance();
 		NumberFormat percentage = NumberFormat.getPercentInstance();
-
+		
+		// This block prints out the receipt with your Item, Price and Quantity values inputted. It then calculates the total, subtotal and tax amount.
 		System.out.format("\n%19s|%20s|%19s|%18s\n", "Item   ", "Price   ", "Quantity   ","Total   ");
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.format("%-19s|%20s|%19d|%18s\n", item1, money.format(itemPrice1), itemAmnt1, money.format(itemTotalPrice1));

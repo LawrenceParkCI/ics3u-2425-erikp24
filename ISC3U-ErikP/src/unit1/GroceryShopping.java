@@ -77,7 +77,8 @@ public class GroceryShopping {
 		double itemTotalPrice1 = itemPrice1*itemAmnt1;
 		double itemTotalPrice2 = itemPrice2*itemAmnt2; 
 		double cost = itemTotalPrice1 + itemTotalPrice2;
-		double total = cost + cost*tax, taxAmnt = cost*tax;
+		double total = cost + cost*tax;
+		double taxAmnt = cost*tax;
 		int roundedTotalInt = (int) Math.round(total);
 		double roundedTotalFlt = Math.round(total*20.0)/20.0;
 
@@ -85,7 +86,7 @@ public class GroceryShopping {
 		NumberFormat money = NumberFormat.getCurrencyInstance();
 		NumberFormat percentage = NumberFormat.getPercentInstance();
 		
-		// This block prints out the receipt with your Item, Price and Quantity values inputted. It then calculates the total, subtotal and tax amount.
+		// This block prints out the receipt with your Item, Price and Quantity values inputted. It then calculates the total, subtotal and tax amount, and prints those out too.
 		System.out.format("\n%19s|%20s|%19s|%18s\n", "Item   ", "Price   ", "Quantity   ","Total   ");
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.format("%-19s|%20s|%19d|%18s\n", item1, money.format(itemPrice1), itemAmnt1, money.format(itemTotalPrice1));

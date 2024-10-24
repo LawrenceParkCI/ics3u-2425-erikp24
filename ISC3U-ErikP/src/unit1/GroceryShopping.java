@@ -5,14 +5,14 @@ import java.time.format.DateTimeFormatter;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.util.Random;
-
+/**
+ * Date: Mon, Oct 21, 2024<br>
+ * Description: A program which asks the user for price and quantity of two items at a grocery store and prints the receipt.
+ * @author Erik Porteu
+ * @param args 
+ */
 public class GroceryShopping {
-	/**
-	 * Date: Mon, Oct 21, 2024<br>
-	 * Description: A program which asks the user for price and quantity of two items at a grocery store and prints the receipt.
-	 * @author Erik Porteu
-	 * @param args 
-	 */
+	
 	public static void main(String[] args) {
 
 		// This code assigns and lists the possible values of compliments 1 and 2.
@@ -77,8 +77,8 @@ public class GroceryShopping {
 		double itemTotalPrice1 = itemPrice1*itemAmnt1;
 		double itemTotalPrice2 = itemPrice2*itemAmnt2; 
 		double cost = itemTotalPrice1 + itemTotalPrice2;
-		double total = cost + cost*tax;
 		double taxAmnt = cost*tax;
+		double total = cost + taxAmnt;
 		int roundedTotalInt = (int) Math.round(total);
 		double roundedTotalFlt = Math.round(total*20.0)/20.0;
 

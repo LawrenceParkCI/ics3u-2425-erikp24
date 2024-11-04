@@ -9,15 +9,20 @@ package unit2;
 public class PositiveNegative {
 
 	public static void main(String[] args) {
-		int num = -2;
+		//Declares a variable and assigns it a integer and determines whether the number is positive or negative by determining whether the number is greater than or less than zero.
+		int num = 7;
 		
 		if (num >= 0) {
-			System.out.println("You have a positive number");
+			System.out.println("You have a positive number.");
 		}
 		else {
-			System.out.println("You have a negative number");
+			System.out.println("You have a negative number.");
 		}
-
+		// Determines whether the number is divisible by 7 using modulus.;
+		
+		if (num % 7 == 0) {
+			System.out.println("You have a number which is divisible by 7.");
+		}
 	}
 
 }

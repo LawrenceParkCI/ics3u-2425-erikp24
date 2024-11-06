@@ -40,6 +40,16 @@ public class IfChallenge {
 			System.out.println("You can keep it wholesome.");
 		}
 		
+		// (IF, ELSE IF, ELSE)
+		System.out.println("(IF, ELSE IF, ELSE)");
+		if (favNum % 10 == 9) {
+			System.out.println("I am too full");
+		} if (favNum % 10 == 9) {
+			System.out.println("Canada is a nice country");
+		} else {
+			System.out.println("don't count on it");
+		}
+		
 		/*
 
     (IF)

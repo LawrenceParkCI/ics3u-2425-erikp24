@@ -42,10 +42,12 @@ public class IfChallenge {
 		
 		// (IF, ELSE IF, ELSE)
 		System.out.println("(IF, ELSE IF, ELSE)");
-		if (favNum % 10 == 9) {
+		if (favNum % 10 == 8) {
 			System.out.println("I am too full");
-		} if (favNum % 10 == 9) {
+			
+		} else if (favNum % 10 == 9) {
 			System.out.println("Canada is a nice country");
+			
 		} else {
 			System.out.println("don't count on it");
 		}

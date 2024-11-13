@@ -33,7 +33,7 @@ class StringComparison {
     
     // this block uses .equalsIgnoreCase
     if (word2.equalsIgnoreCase("harry")){
-    	System.out.println("Which planet do you speak of?");
+    	System.out.println("Who do you speak of??");
     }
     
     if (word1.compareTo(word2) < 0) {
@@ -65,8 +65,19 @@ class StringComparison {
 
     //What values does compareTo() return? How can we 
     //interpret the value?
+    /*
+     * A: .compareTo() returns the value of the first characters by two strings in ascii,
+     * and it subtracts the two values, which will return a positive/negative number, or 0.
+     * If the number is positive, it means that the the first character of the second string is before the first string
+     * in ascii. If negative it means it comes after. If 0 it means the characters have the same ascii value.
+     */
 
-    //what value does equals() and equalsIgnoreCase() return? 
+    //what value does equals() and equalsIgnoreCase() return?
     //What is the difference between these two functions?
+    /*
+     * A: equals() writes the code if the value of the string that's in the if statement if
+     * it is exactly equal to the string. equalsIgnoreCase() writes the code if the value
+     * of the strings are equal, but the characters can be either uppercase or lowercase.
+     */
   }
 }

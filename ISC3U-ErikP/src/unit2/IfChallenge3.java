@@ -46,25 +46,34 @@ public class IfChallenge3 {
 			}
 			
 			System.out.println("What is the city with the most population?");
-			System.out.println("1) New york");
+			System.out.println("1) New York");
 			System.out.println("2) Tokyo");
 			System.out.println("3) New Dehli");
 			ques2 = sc.nextInt();
 			
 			if (ques2 == 2) {
-				correct = 1;
-				System.out.println("Good job, smartypants.\n");
+				correct = 2;
+				System.out.println("Not too shabby.\n");
 			} else if (ques2 >= 1 && ques2 < 2 && ques2 > 2 && ques2 <= 3) {
-				System.out.println("*\n");
+				System.out.println("You're pretty smart.. For a Monkey!\n");
 			} else {
-				System.out.println("I think you're doing the wrong test.../n");
+				System.out.println("I think you're doing the wrong test...\n");
 			}
 			
-			System.out.println("What is the city with the most population?");
-			System.out.println("a) New york");
-			System.out.println("b) Tokyo");
-			System.out.println("c) New Dehli");
+			System.out.println("What fruit is the juiciest");
+			System.out.println("a) Juicyfruit");
+			System.out.println("b) Banana");
+			System.out.println("c) Apple");
 			ques3 = sc.next();
+			
+			if (ques3.equalsIgnoreCase("A")) {
+				correct = 3;
+				System.out.println("Wowzers.\n");
+			} else if (ques2 >= 1 && ques2 < 2 && ques2 > 2 && ques2 <= 3) {
+				System.out.println("I bet you like drinking warm milk!\n");
+			} else {
+				System.out.println("That's not even close to the right answer, weirdo.\n");
+			}
 			
 			sc.close();
 			

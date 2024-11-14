@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class IfChallenge3 {
 	public static void main(String[] args) {
 
-		final int questionsAmnt = 8;
+		final int questionsAmnt = 4;
 
 		// This block declares the variables
 		String yesOrNo;
@@ -96,12 +96,12 @@ public class IfChallenge3 {
 			}
 
 			// This block prompts the user to answer the fourth question
-			System.out.println("What ammenities are maintained by the municipal government? (Select 3 that apply)");
+			System.out.println("What responsabilites does the municipal government account for? (Select 3 that apply)");
 			System.out.println("a) Garbage & recycling");
 			System.out.println("b) Highways");
 			System.out.println("c) Libraries");
 			System.out.println("d) Green space");
-			System.out.println("e) Immigration\n");
+			System.out.println("e) Immigration & Border security\n");
 			System.out.print("Ans 1 > ");
 			ques4a = sc.next();
 			System.out.print("Ans 2 > ");

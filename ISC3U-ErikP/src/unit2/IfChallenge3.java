@@ -48,10 +48,10 @@ public class IfChallenge3 {
 
 			// If the user answers correctly, 1 int will be added to the variable "score", and a string is printed
 			// If not, then the nothing is added to score, and a different string is printed
-			if (ques1 == 3) {
+			if (ques1 == 2) {
 				score = score + 1;
 				System.out.println("\nGood job, smartypants.\n");
-			} else if (ques1 >= 1 && ques1 <= 2) {
+			} else if (ques1 == 1 && ques1 == 3) {
 				System.out.println("\n*Incorrect buzzer noise*\n");
 			} else {
 				System.out.println("\nWhat kind of answer is that?!?\n");

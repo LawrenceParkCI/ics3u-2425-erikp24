@@ -14,6 +14,10 @@ public class DoubleDiceContest {
 
 		System.out.format("%30s","Dice Game:\n\n");
 		
+		System.out.println("Two contestants roll two die, and whoevers roll has the highest sum, wins!\n");
+		
+		Thread.sleep(3000);
+		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 
 		System.out.format("\n%30s","Human/Player:\n");
@@ -36,6 +40,8 @@ public class DoubleDiceContest {
 		
 		System.out.println("\nThe player rolls a " + dice1Hum + " and a " + dice2Hum + ". Thus, Rolling " + dieHuman + " in total.\n");
 		
+		Thread.sleep(3000);
+		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		System.out.format("\n%30s","Computer/Robot:\n");
@@ -56,6 +62,8 @@ public class DoubleDiceContest {
 		
 		int dieRobot = dice1Rob + dice2Rob;
 		System.out.println("\nThe robot rolls a " + dice1Rob + " and a " + dice2Rob + ". Thus, Rolling " + dieRobot + " in total.\n");
+		
+		Thread.sleep(3000);
 		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		

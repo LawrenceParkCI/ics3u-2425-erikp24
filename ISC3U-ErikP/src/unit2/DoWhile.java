@@ -1,9 +1,9 @@
 package unit2;
 
 /**
-Description:
-Date:
-@author 
+Description: A program which explores the property of do while statements. <br>
+Date: Mon, Nov 25, 2024
+@author Erik Porteu
  */
 
 import java.util.Scanner;

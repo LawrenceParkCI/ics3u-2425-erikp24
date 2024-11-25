@@ -1,9 +1,9 @@
 package unit2;
 
 /**
- * Description:
- * Date:
- * @author
+ * Description: A program that creates a game with rolling two die<br>
+ * Date: Wed, Nov 20, 2024
+ * @author Erik Porteu
  */
 public class DoubleDiceContest {
 

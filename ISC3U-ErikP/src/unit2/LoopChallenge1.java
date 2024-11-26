@@ -20,7 +20,7 @@ public class LoopChallenge1 {
 		 */
 		String pass = "12345";
 		String userInput = "";
-		int tries = 3;
+		int tries = 4;
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("What is the password?:");

@@ -7,14 +7,14 @@ Description:
  - Parts of a method
 Date: Fri, Dec 13, 2024
 @author Erik Porteu
-*/
+ */
 
 public class Methods {
-public static void main(String[] args) {
-  /**
+	public static void main(String[] args) {
+		/**
     Introduction
-  */
-    /*
+		 */
+		/*
     Methods help you modularize a program by separating its tasks into self-contained units.
 
     Pros:
@@ -23,37 +23,52 @@ public static void main(String[] args) {
     - Divide and conquer approach - Constructing programs from small, simple pieces
     - Software reusability - Use existing methods/classes as building blocks to create new programs.
     - Dividing a program into meaningful methods/classes makes the program easier to debug and maintain.
-    */
-  /*
+		 */
+		/*
     Using Static Methods
-  */
-  //Print out a sentence about this school year
+		 */
+		//Print out a sentence about this school year
+		System.out.println("School is fun!");
 
-  /*
+		/*
+
     You used a method! The println() method takes some information (parameter), and does something with it - in this case, it puts the text into the console.
 
     You as the user don't know how it works, but because someone has made it, you can simply use it again and again.
-  */
+		 */
 
-  //Look below for part 2, and then come back  
+		//Look below for part 2, and then come back  
 
-  //explain what is happening
-	// A: myNum gets declared and initialized sends it to the method doubleNumber and doubleNumber returns its value
-  int myNum = 30;
-  myNum = doubleNumber(myNum);
-  System.out.println(myNum);
+		//explain what is happening
+		// A: myNum gets declared and initialized sends it to the method doubleNumber and doubleNumber returns its value
+		int myNum = 30;
+		myNum = doubleNumber(myNum);
+		System.out.println(myNum);
 
- //Explain what is happening
-  // A: does the exact same thing as above except in one line
-  System.out.println(doubleNumber(5));
-
-
-  //Part 3 is at the bottom, and return here to print out your method's return value
-  
-}
+		//Explain what is happening
+		// A: does the exact same thing as above except in one line
+		System.out.println(doubleNumber(5));
 
 
-/**
+		//Part 3 is at the bottom, and return here to print out your method's return value
+		int largeNum;
+		int numero1 = 2;
+		int numero2= 13;
+
+		largeNum = numeros(numero1,numero2);
+		
+		System.out.println(largeNum);
+
+	}
+
+	public static int numeros(int numero1, int numero2) {
+		int largeNum = Math.max(numero1, numero2);
+		
+		return largeNum;
+		
+	}
+	
+	/**
   Part 2 - Parts of a method
   a) You notice the javadac comment above the method - this explains what the method is doing, if it has any input, and if it has any output
   b) public -> means this method is useable anywhere
@@ -63,33 +78,27 @@ public static void main(String[] args) {
   f)int num -> the values we need in order for the method to work, and what we will call it in the method; the *parameter*
       the *parameter* -> what the name of the variable which will hold the value is
       the *argument* -> the actual value that is passed into the method
-*/
+	 */
 
-/**(a)
- * This method takes an integer and returns two times its
- * original value
- * @param num - a number to be doubled
- * @return int - a value that was double its original given value
-*/
-//(b)   (c)    (d)     (e)                 (f)
-public static int doubleNumber(int num) {
-  int returnValue = num * 2;
-  return returnValue; //sends the information back to be used
-}
+	/**(a)
+	 * This method takes an integer and returns two times its
+	 * original value
+	 * @param num - a number to be doubled
+	 * @return int - a value that was double its original given value
+	 */
+	//(b)   (c)    (d)     (e)                 (f)
+	public static int doubleNumber(int num) {
+		int returnValue = num * 2;
+		return returnValue; //sends the information back to be used
+	}
 
-/**
+	/**
   Part 3 - Create your method
-*/
-int numero = 2;
-int numero1;
-int numero2;
+	 */
 
-public static int numeros(int numero) {
-	int x = numero * 2;
-	return x;
-	
-}
-/*
+
+
+	/*
   Create a method that has 2 int as parameters, and returns the larger one. The name of the method is larger.
-*/
+	 */
 }

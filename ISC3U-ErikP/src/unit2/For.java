@@ -1,7 +1,7 @@
 package unit2;
 
 /**
-Description:
+Description: A program that explores the pro
 Date:
 @author 
 */

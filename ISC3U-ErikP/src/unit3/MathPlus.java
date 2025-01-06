@@ -1,4 +1,7 @@
 package unit3;
+
+import java.util.ArrayList;
+
 /**
  * Description: A program which explores the properties of methods. </br>
  * Date: Dec 18, 2024
@@ -22,7 +25,7 @@ public class MathPlus {
 
 		// This code is method 3 factor calculations:
 		System.out.println("\nFactor method:");
-		int factors = numOfFactors(312);
+		int factors = numOfFactors(8);
 		System.out.println("The number of factors that the number has is " + factors);
 
 		// This code is method 4 prime number calculations:
@@ -63,16 +66,23 @@ public class MathPlus {
 		System.out.println("float " + maxFlt);
 
 		// This code is array 6 return the difference between the smallest and largest numbers in the array
-		System.out.println("\nDifference between largest and smallest # in an array");
+		System.out.println("\nDifference between largest and smallest # in an array:");
 		int [] numbas = {10, 13, 32, 24, 18, 100 };
 		int difArray = difArray(numbas);
 		System.out.println("integer " + difArray);
 
-		// This code is array 6 return the difference between the smallest and largest numbers in the array
-		System.out.println("\nDifference between largest and smallest # in an array");
+		// This code is array 7 return the difference between the smallest and largest numbers in the array
+		System.out.println("\nDifference between largest and smallest # in an array:");
 		double [] numbasFlt = {3.2, 2.1, 5.6, 1.4, 9.6, 7.9};
 		double difArrayFlt = difArrayFlt(numbasFlt);
 		System.out.println("float " + difArrayFlt);
+		
+		// This code is array 8 return the factors of of a number
+		System.out.println("\nFactors of a number:");
+		int number = 8;
+		int[] factors2 = getFactors(number);
+		
+		
 
 	}
 	/**
@@ -209,6 +219,16 @@ public class MathPlus {
 			}
 		}
 		return numbasFlt[maxIndex] - numbasFlt[minIndex];
+	}
+	
+	public static int[] getFactors(int number) {
+		int count = 0;
+		for (int i = 1; i <= number; i++) {
+			if ((number % i) == 0) {
+				count ++;
+			}
+		}
+		return factors;
 	}
 
 }

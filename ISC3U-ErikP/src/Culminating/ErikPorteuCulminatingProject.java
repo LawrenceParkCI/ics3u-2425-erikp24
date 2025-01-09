@@ -32,24 +32,20 @@ public class ErikPorteuCulminatingProject {
 		// This block of code runs the start of the game, where the user can choose its difficulty
 		if (mainScreenIn.equals("1") || mainScreenIn.equals("1.") || mainScreenIn.equalsIgnoreCase("Start")) {
 			System.out.println("\nWould you like to play in:");
-			
+
 			// This code gets input from the user to choose the difficulty of the game
 			System.out.println("\n1. Easy\n2. Medium\n3. Hard\n4. Overkill (No vowels)");
 			System.out.print("\nInput: ");
 			difficultyChoice = sc.next();
+
+			// the input above is sent to a method which chooses a specific array based off of difficulty, then sends the array to another method that selects one word randomly
+			String[] arrayDifficulty = chooseArrayDifficulty(difficultyChoice);
+			String wordForGame = wordFetcher(arrayDifficulty);
 			
-			if (difficultyChoice.equals("1") || difficultyChoice.equalsIgnoreCase("1.") || difficultyChoice.equalsIgnoreCase("Easy")) {
-				String[] easyWords = {"eye", "sail", "fun", "easy", "sleep", ""};
-				
-			} else if (difficultyChoice.equals("2") || difficultyChoice.equalsIgnoreCase("2.") || difficultyChoice.equalsIgnoreCase("Medium")) {
-				String[] mediumWords = {};
-				
-			} else if (difficultyChoice.equals("3") || difficultyChoice.equalsIgnoreCase("3.") || difficultyChoice.equalsIgnoreCase("Hard")) {
-				String[] hardWords = {};
-				
-			} else if (difficultyChoice.equals("4") || difficultyChoice.equalsIgnoreCase("4.") || difficultyChoice.equalsIgnoreCase("Overkill")) {
-				String[] overkillWords = {};
-				
+			// This code prints the number of blank spaces of the word, based off of its index
+			System.out.println("\n" + wordForGame + "\n");
+			for (int i = 0; i < wordForGame.length(); i++) {
+				System.out.print('.');
 			}
 
 			// This block of code prints the rules of hangman
@@ -85,18 +81,123 @@ public class ErikPorteuCulminatingProject {
 		sc.close();
 	}
 
-	public static String wordFetcher (String words[]) {
-		return null;
+	/**
+	 * @param String difficultyChoice: a String that was inputted by a user to select difficulty
+	 * @return arrayChoice: an array that was selected based off of difficultyChoice
+	 */
+	public static String [] chooseArrayDifficulty (String difficultyChoice) {
+		// These are all the possible arrays
+		String[] easyWords = {"eye", "sail", "fun", "easy", "sleep"};
+		String[] mediumWords = {"halt", "return", ""};
+		String[] hardWords = {"fortuitous"};
+		String[] overkillWords = {"crypt", "myths", "flyby", "myrrh"};
+		String[] arrayChoice = null;
+
+		// This code chooses one of the arrays above for word selection, based on the user input.
+		if (difficultyChoice.equals("1") || difficultyChoice.equalsIgnoreCase("1.") || difficultyChoice.equalsIgnoreCase("Easy")) {
+			arrayChoice = easyWords;
+
+		} else if (difficultyChoice.equals("2") || difficultyChoice.equalsIgnoreCase("2.") || difficultyChoice.equalsIgnoreCase("Medium")) {
+			arrayChoice = mediumWords;
+
+		} else if (difficultyChoice.equals("3") || difficultyChoice.equalsIgnoreCase("3.") || difficultyChoice.equalsIgnoreCase("Hard")) {
+			arrayChoice = hardWords;
+
+		} else if (difficultyChoice.equals("4") || difficultyChoice.equalsIgnoreCase("4.") || difficultyChoice.equalsIgnoreCase("Overkill")) {
+			arrayChoice = overkillWords;
+		}
+
+		return arrayChoice;
+
 
 	}
 
-	public static int underscorePrinter (String word) {
-		return 0;
+	public static String wordFetcher (String words[]) {
+		int random = 0;
+		for (int i = 0; i < words.length; i++) {
+			random = (int) (Math.random() * i);
+		}
+		String word = words[random];
+
+		return word;
 
 	}
 
 	public static char charPrinter (String word) {
 		return 0;
+
+	}
+
+	public static String wrongGuessDispay() {
+		int wrongGuesses = 0;
+		String hangmanPic = null;
+
+		if (wrongGuesses == 0) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 1) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 2) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ "  |   |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 3) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ " /|   |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 4) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ " /|\\  |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 5) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ " /|\\  |\r\n"
+					+ " /    |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (wrongGuesses == 6) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
+					+ " /|\\  |\r\n"
+					+ " / \\  |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		}
+		
+		return hangmanPic;
 
 	}
 

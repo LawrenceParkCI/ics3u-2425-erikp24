@@ -1,5 +1,6 @@
 package Culminating;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ErikPorteuCulminatingProject {
@@ -12,6 +13,7 @@ public class ErikPorteuCulminatingProject {
 		String mainScreenIn;
 		String ruleScreenIn;
 		String difficultyChoice;
+		boolean gameStarted = true;
 
 
 		// This code prints the title of the game and decals
@@ -37,15 +39,51 @@ public class ErikPorteuCulminatingProject {
 			System.out.println("\n1. Easy\n2. Medium\n3. Hard\n4. Overkill (No vowels)");
 			System.out.print("\nInput: ");
 			difficultyChoice = sc.next();
+			
 
 			// the input above is sent to a method which chooses a specific array based off of difficulty, then sends the array to another method that selects one word randomly
 			String[] arrayDifficulty = chooseArrayDifficulty(difficultyChoice);
 			String wordForGame = wordFetcher(arrayDifficulty);
 			
-			// This code prints the number of blank spaces of the word, based off of its index
-			System.out.println("\n" + wordForGame + "\n");
+			int wrongGuesses = 0;
+			char letterGuessed;
+			String hangmanPic = wrongGuessDispay(wrongGuesses);
+			System.out.println(hangmanPic);
+			
+			char[] guessedWord = new char[wordForGame.length()];
+			
 			for (int i = 0; i < wordForGame.length(); i++) {
-				System.out.print('.');
+				guessedWord[i] = '.';
+			}
+			
+			while (gameStarted == true) {
+				
+				// This code prints the number of blank spaces of the word, based off of its index
+				System.out.println("\nYour word to guess is:\n");
+				for (int i = 0; i < wordForGame.length(); i++ ) {
+					System.out.print(guessedWord[i]);
+				}
+				
+				// This code is the scanner input for a character
+				System.out.print("\n\nInput: ");
+				letterGuessed = sc.next().toLowerCase().charAt(0);
+				
+				// This code checks to see if the character that the user inputted is in the string
+				if (wordForGame.contains(String.valueOf(letterGuessed))) {
+					for (int i = 0; i < wordForGame.length(); i++) {
+						if (wordForGame.charAt(i) == letterGuessed) {
+							guessedWord[i] = letterGuessed;
+						}
+					}
+				}
+				boolean wordCompleted = isWordCompleted(guessedWord);
+				
+				// this code checks to see if the 
+				
+				
+//				String hangmanPic = wrongGuessDispay(wrongGuesses);
+//				System.out.println(hangmanPic);
+				
 			}
 
 			// This block of code prints the rules of hangman
@@ -89,7 +127,7 @@ public class ErikPorteuCulminatingProject {
 		// These are all the possible arrays
 		String[] easyWords = {"eye", "sail", "fun", "easy", "sleep"};
 		String[] mediumWords = {"halt", "return", ""};
-		String[] hardWords = {"fortuitous"};
+		String[] hardWords = {"fortuitous", "supercalifragilisticexpialidocious", "opportunistic", "dynamite", "malfeasances"};
 		String[] overkillWords = {"crypt", "myths", "flyby", "myrrh"};
 		String[] arrayChoice = null;
 
@@ -123,16 +161,17 @@ public class ErikPorteuCulminatingProject {
 
 	}
 
-	public static char charPrinter (String word) {
-		return 0;
+	public static boolean isWordCompleted (char[] guessedWord) {
+		char c = '.';
+		return true;
 
 	}
 
-	public static String wrongGuessDispay() {
-		int wrongGuesses = 0;
+	public static String wrongGuessDispay(int wrongGuesses) {
+		int count = wrongGuesses;
 		String hangmanPic = null;
 
-		if (wrongGuesses == 0) {
+		if (count == 0) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "      |\r\n"
@@ -141,25 +180,25 @@ public class ErikPorteuCulminatingProject {
 					+ "      |\r\n"
 					+ "=========";
 			
-		} else if (wrongGuesses == 1) {
-			hangmanPic = "  +---+\r\n"
-					+ "  |   |\r\n"
-					+ "  O   |\r\n"
-					+ "      |\r\n"
-					+ "      |\r\n"
-					+ "      |\r\n"
-					+ "=========";
-			
-		} else if (wrongGuesses == 2) {
+		} else if (count == 1) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "  O   |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "      |\r\n"
+					+ "=========";
+			
+		} else if (count == 2) {
+			hangmanPic = "  +---+\r\n"
+					+ "  |   |\r\n"
+					+ "  O   |\r\n"
 					+ "  |   |\r\n"
 					+ "      |\r\n"
 					+ "      |\r\n"
 					+ "=========";
 			
-		} else if (wrongGuesses == 3) {
+		} else if (count == 3) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "  O   |\r\n"
@@ -168,7 +207,7 @@ public class ErikPorteuCulminatingProject {
 					+ "      |\r\n"
 					+ "=========";
 			
-		} else if (wrongGuesses == 4) {
+		} else if (count == 4) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "  O   |\r\n"
@@ -177,7 +216,7 @@ public class ErikPorteuCulminatingProject {
 					+ "      |\r\n"
 					+ "=========";
 			
-		} else if (wrongGuesses == 5) {
+		} else if (count == 5) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "  O   |\r\n"
@@ -186,7 +225,7 @@ public class ErikPorteuCulminatingProject {
 					+ "      |\r\n"
 					+ "=========";
 			
-		} else if (wrongGuesses == 6) {
+		} else if (count == 6) {
 			hangmanPic = "  +---+\r\n"
 					+ "  |   |\r\n"
 					+ "  O   |\r\n"

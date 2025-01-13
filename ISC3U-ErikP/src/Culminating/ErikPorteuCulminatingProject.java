@@ -1,6 +1,11 @@
 package Culminating;
 
-import java.util.Arrays;
+/**
+ * Date: Monday, Jan 13, 2025 <br>
+ * Description: A program which runs a game of hangman in Java
+ * @author Erik Porteu
+ */
+
 import java.util.Scanner;
 
 public class ErikPorteuCulminatingProject {
@@ -13,8 +18,9 @@ public class ErikPorteuCulminatingProject {
 		String mainScreenIn;
 		String ruleScreenIn;
 		String difficultyChoice;
-		boolean gameStarted = true;
-
+		int wrongGuesses = 0;
+		char letterGuessed;
+		boolean wordCompleted = false;
 
 		// This code prints the title of the game and decals
 		System.out.println("Welcome to...");
@@ -45,10 +51,9 @@ public class ErikPorteuCulminatingProject {
 			String[] arrayDifficulty = chooseArrayDifficulty(difficultyChoice);
 			String wordForGame = wordFetcher(arrayDifficulty);
 			
-			int wrongGuesses = 0;
-			char letterGuessed;
+			// this code just displays the hangman ASCII art at the start of the game.
 			String hangmanPic = wrongGuessDispay(wrongGuesses);
-			System.out.println(hangmanPic);
+			System.out.println("\n" +hangmanPic);
 			
 			char[] guessedWord = new char[wordForGame.length()];
 			
@@ -56,7 +61,7 @@ public class ErikPorteuCulminatingProject {
 				guessedWord[i] = '.';
 			}
 			
-			while (gameStarted == true) {
+			while (wordCompleted != true && wrongGuesses < 6) {
 				
 				// This code prints the number of blank spaces of the word, based off of its index
 				System.out.println("\nYour word to guess is:\n");
@@ -68,21 +73,33 @@ public class ErikPorteuCulminatingProject {
 				System.out.print("\n\nInput: ");
 				letterGuessed = sc.next().toLowerCase().charAt(0);
 				
-				// This code checks to see if the character that the user inputted is in the string
+				// This code checks to see if the character that the user inputted is in the word, and then replaces the blank spaces with the char inputted
 				if (wordForGame.contains(String.valueOf(letterGuessed))) {
 					for (int i = 0; i < wordForGame.length(); i++) {
 						if (wordForGame.charAt(i) == letterGuessed) {
 							guessedWord[i] = letterGuessed;
+							System.out.println("\nGood guess!\n");
+							hangmanPic = wrongGuessDispay(wrongGuesses);
+							System.out.println(hangmanPic);
 						}
 					}
+				
+					// this code runs if the character inputted by the user is not in the word
+				} else {
+					wrongGuesses ++;
+					System.out.println("\nSorry, thats wrong. (You now have " + (6 - wrongGuesses) + " guesses left)\n");
+					hangmanPic = wrongGuessDispay(wrongGuesses);
+					System.out.println(hangmanPic);
 				}
-				boolean wordCompleted = isWordCompleted(guessedWord);
 				
-				// this code checks to see if the 
+				wordCompleted = isWordCompleted(guessedWord, wordForGame);
+			}
+			
+			if (wordCompleted == true) {
+				System.out.println("\nCongratulations! You guessed the word correctly! Game over.");
 				
-				
-//				String hangmanPic = wrongGuessDispay(wrongGuesses);
-//				System.out.println(hangmanPic);
+			} else if (wordCompleted == false && wrongGuesses == 6) {
+				System.out.println("\nYou ran out of tries, Game over.\nThe word was: " + wordForGame);
 				
 			}
 
@@ -126,8 +143,8 @@ public class ErikPorteuCulminatingProject {
 	public static String [] chooseArrayDifficulty (String difficultyChoice) {
 		// These are all the possible arrays
 		String[] easyWords = {"eye", "sail", "fun", "easy", "sleep"};
-		String[] mediumWords = {"halt", "return", ""};
-		String[] hardWords = {"fortuitous", "supercalifragilisticexpialidocious", "opportunistic", "dynamite", "malfeasances"};
+		String[] mediumWords = {"halt", "return", "wallow"};
+		String[] hardWords = {"fortuitous", "supercalifragilisticexpialidocious", "opportunistic", "dynamite", "malfeasances", "perspective"};
 		String[] overkillWords = {"crypt", "myths", "flyby", "myrrh"};
 		String[] arrayChoice = null;
 
@@ -143,6 +160,7 @@ public class ErikPorteuCulminatingProject {
 
 		} else if (difficultyChoice.equals("4") || difficultyChoice.equalsIgnoreCase("4.") || difficultyChoice.equalsIgnoreCase("Overkill")) {
 			arrayChoice = overkillWords;
+			
 		}
 
 		return arrayChoice;
@@ -151,18 +169,20 @@ public class ErikPorteuCulminatingProject {
 	}
 
 	public static String wordFetcher (String words[]) {
-		int random = 0;
-		for (int i = 0; i < words.length; i++) {
-			random = (int) (Math.random() * i);
-		}
+		int random = (int) (Math.random() * words.length);
 		String word = words[random];
-
+		
 		return word;
 
 	}
 
-	public static boolean isWordCompleted (char[] guessedWord) {
+	public static boolean isWordCompleted (char[] guessedWord, String wordForGame) {
 		char c = '.';
+		for (int i = 0; i < wordForGame.length(); i++) {
+			if (guessedWord[i] == c) {
+				return false;
+			}
+		}
 		return true;
 
 	}

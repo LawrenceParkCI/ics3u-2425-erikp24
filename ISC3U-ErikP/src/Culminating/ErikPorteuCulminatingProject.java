@@ -89,6 +89,10 @@ public class ErikPorteuCulminatingProject {
 					// This code is the scanner input for a character
 					c.print("\n\nInput: ");
 					letterGuessed = c.readLine().toLowerCase().charAt(0);
+					
+					// This code tracks your input to see if you have entered a letter twice
+					boolean[] alphabetGuessed = new boolean[26];
+					alphabetGuessed[letterGuessed - 97] = true;
 
 					// This code checks to see if the character that the user inputted is in the word, and then replaces the blank spaces with the char inputted, and prints a line and the ASCII art hangman based off of guesses.
 					if (wordForGame.contains(String.valueOf(letterGuessed))) {
@@ -109,8 +113,7 @@ public class ErikPorteuCulminatingProject {
 						c.println(hangmanPic);
 					}
 					
-					boolean[] alphabetGuessed = new boolean[26];
-					alphabetGuessed[letterGuessed - 97] = true;
+					// This code prints if the user types the same character twice
 					if (alphabetGuessed[letterGuessed - 97] == true) {
 						c.println("You already entered that, try another letter!");
 					}

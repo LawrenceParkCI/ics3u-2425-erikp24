@@ -7,12 +7,15 @@ package Culminating;
  */
 
 import hsa_new.Console;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.util.Scanner;
 
 
 public class ErikPorteuCulminatingProject {
 
-	static Console c = new Console (25, 150);
+	static Console c = new Console (25, 100);
 	public static void main(String[] args) throws InterruptedException {	
 
 		Scanner sc = new Scanner(System.in);
@@ -28,6 +31,7 @@ public class ErikPorteuCulminatingProject {
 		boolean wordCompleted = false;
 
 		// This code prints the title of the game and ASCII art decals
+		c.setTextColor(Color.blue);
 		c.println("Developed by Erik Porteu");
 		Thread.sleep(2000);
 		c.println("Welcome to...");
@@ -105,13 +109,13 @@ public class ErikPorteuCulminatingProject {
 						c.println(hangmanPic);
 					}
 					
-					boolean[] aplhabetGuessed = new boolean[26];
-					if (wordCompleted == false) {
-						boolean[] alphabetGuessed = null;
-						alphabetGuessed[letterGuessed - 97] = true;
+					boolean[] alphabetGuessed = new boolean[26];
+					alphabetGuessed[letterGuessed - 97] = true;
+					if (alphabetGuessed[letterGuessed - 97] == true) {
+						c.println("You already entered that, try another letter!");
 					}
 
-					// this code checks to see if the word has any blank spaces remaining
+					// this code checks to see if the word has any blank spaces '.' remaining
 					wordCompleted = isWordCompleted(guessedWord, wordForGame);
 
 				}
@@ -140,6 +144,7 @@ public class ErikPorteuCulminatingProject {
 
 				} else {
 					c.println("User input invalid, returning to main screen.");
+					Thread.sleep(2000);
 					programRunning = true;
 				}
 
@@ -163,6 +168,7 @@ public class ErikPorteuCulminatingProject {
 					// This block of code runs if the user inputs anything else, in rule screen
 				} else {
 					c.println("Entered input not valid. Sending user back to main screen.");
+					Thread.sleep(2000);
 					programRunning = true;
 				}
 
@@ -173,6 +179,7 @@ public class ErikPorteuCulminatingProject {
 				// This block of code runs if if the user inputs anything else in main screen
 			} else {
 				c.println("Entered input not valid. Sending user back to main screen.");
+				Thread.sleep(2000);
 				programRunning = true;
 			}
 

@@ -1,9 +1,9 @@
 package unit2;
 
 /**
- * Description:
- * Date:
- * @author
+ * Description: A program that creates a game with rolling two die<br>
+ * Date: Wed, Nov 20, 2024
+ * @author Erik Porteu
  */
 public class DoubleDiceContest {
 
@@ -16,6 +16,10 @@ public class DoubleDiceContest {
 		System.out.format("%30s","Dice Game:\n");
 		
 		System.out.println("\nThe goal of the game is whoever rolls a larger number with two die, wins!\n");
+		
+		Thread.sleep(3000);
+		
+		System.out.println("Two contestants roll two die, and whoevers roll has the highest sum, wins!\n");
 		
 		Thread.sleep(3000);
 		

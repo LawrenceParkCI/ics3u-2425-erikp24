@@ -8,11 +8,16 @@ package unit2;
 public class DoubleDiceContest {
 
 	public static void main(String[] args) throws InterruptedException {
+		
 		// This block just declares variables
 		int dice1Rob, dice2Rob;
 		int dice1Hum, dice2Hum;
-
-		System.out.format("%30s","Dice Game:\n\n");
+		
+		System.out.format("%30s","Dice Game:\n");
+		
+		System.out.println("\nThe goal of the game is whoever rolls a larger number with two die, wins!\n");
+		
+		Thread.sleep(3000);
 		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 
@@ -36,6 +41,8 @@ public class DoubleDiceContest {
 		
 		System.out.println("\nThe player rolls a " + dice1Hum + " and a " + dice2Hum + ". Thus, Rolling " + dieHuman + " in total.\n");
 		
+		Thread.sleep(3000);
+		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		System.out.format("\n%30s","Computer/Robot:\n");
@@ -57,13 +64,15 @@ public class DoubleDiceContest {
 		int dieRobot = dice1Rob + dice2Rob;
 		System.out.println("\nThe robot rolls a " + dice1Rob + " and a " + dice2Rob + ". Thus, Rolling " + dieRobot + " in total.\n");
 		
+		Thread.sleep(3000);
+		
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		System.out.format("\n%30s","Showdown:\n");
 		
 		if ( dieHuman > dieRobot) {
 			
-			System.out.println("\nSince the human's " + dieHuman + " is greater than the robot's " + dieRobot + " the human wins!\n");
+			System.out.println("\nSince the human's " + dieHuman + " is greater than the robot's " + dieRobot + ", the human wins!\n");
 			
 			// This block just prints out some ASCII art
 			System.out.println("       _\\|/^");
@@ -77,7 +86,7 @@ public class DoubleDiceContest {
 			
 		} else if ( dieRobot > dieHuman ){
 			
-			System.out.println("\nSince the robot's " + dieRobot + " is greater than the human's " + dieHuman + " the robot wins!\n");
+			System.out.println("\nSince the robot's " + dieRobot + " is greater than the human's " + dieHuman + ", the robot wins!\n");
 			
 			// This block just prints out some ASCII art
 			System.out.println("      \\_/");
@@ -91,7 +100,7 @@ public class DoubleDiceContest {
 			
 		} else if (dieHuman == dieRobot) {
 			
-			System.out.println("\nSince both contestants die are equal, no one wins!");
+			System.out.println("\nSince both contestants rolled the same number, no one wins!");
 			
 		}
 

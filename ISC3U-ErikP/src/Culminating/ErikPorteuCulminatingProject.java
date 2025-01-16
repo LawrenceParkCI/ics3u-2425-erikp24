@@ -9,7 +9,6 @@ package Culminating;
 import hsa_new.Console;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.util.Scanner;
 
 
@@ -60,7 +59,6 @@ public class ErikPorteuCulminatingProject {
 				c.println("\n1. Easy\n2. Medium\n3. Hard\n4. Overkill (No vowels)");
 				c.print("\nInput: ");
 				difficultyChoice = c.readLine();
-				Thread.sleep(2000);
 				c.clear();
 
 				// the input above is sent to a method which chooses a specific array based off of difficulty, then sends the array to another method that selects one word randomly
@@ -73,6 +71,9 @@ public class ErikPorteuCulminatingProject {
 
 				// this code create a character array to store the blank spaces to guess the word, limited by the length of the wordForGame
 				char[] guessedWord = new char[wordForGame.length()];
+
+				// this code creates an array to see if the user has entered the same character twice
+				boolean[] alphabetGuessed = new boolean[26];
 
 				// this code sets the spots in the array to the character '.' based off of the index of the wordForGame
 				for (int i = 0; i < wordForGame.length(); i++) {
@@ -90,16 +91,16 @@ public class ErikPorteuCulminatingProject {
 					// This code is the scanner input for a character
 					c.print("\n\nInput: ");
 					letterGuessed = c.readLine().toLowerCase().charAt(0);
-					
-					// This code tracks your input to see if you have entered a letter twice
-					boolean[] alphabetGuessed = new boolean[26];
-					if (alphabetGuessed[letterGuessed - 97] == true) {
-						c.println("You already entered that, try another letter!");
-					}
-					alphabetGuessed[letterGuessed - 97] = true;
 
+					// This code tracks your input to see if you have entered a letter twice
+					if (alphabetGuessed[letterGuessed - 97] == true) {
+						c.println("\nYou already entered that, try another letter!\n");
+						hangmanPic = wrongGuessDispay(wrongGuesses);
+						c.println(hangmanPic);
+					}
+					
 					// This code checks to see if the character that the user inputted is in the word, and then replaces the blank spaces with the char inputted, and prints a line and the ASCII art hangman based off of guesses.
-					if (wordForGame.contains(String.valueOf(letterGuessed))) {
+					if (wordForGame.contains(String.valueOf(letterGuessed)) && alphabetGuessed[letterGuessed - 97] != true) {
 						for (int i = 0; i < wordForGame.length(); i++) {
 							if (wordForGame.charAt(i) == letterGuessed) {
 								guessedWord[i] = letterGuessed;
@@ -108,30 +109,30 @@ public class ErikPorteuCulminatingProject {
 								c.println(hangmanPic);
 							}
 						}
-
+						
 						// this code runs if the character inputted by the user is not in the word
-					} else {
+					} else if (!(wordForGame.contains(String.valueOf(letterGuessed))) && alphabetGuessed[letterGuessed - 97] != true) {
 						wrongGuesses ++;
 						c.println("\nSorry, there's no \'"+ letterGuessed + "\'. (You now have " + (6 - wrongGuesses) + " guesses left)\n");
 						hangmanPic = wrongGuessDispay(wrongGuesses);
 						c.println(hangmanPic);
 					}
+					alphabetGuessed[letterGuessed - 97] = true;
 
 					// this code checks to see if the word has any blank spaces '.' remaining
 					wordCompleted = isWordCompleted(guessedWord, wordForGame);
-
 				}
 
 				// this code runs if the word is completed and under the max # of wrong guesses
 				if (wordCompleted == true && wrongGuesses < 6) {
-					c.println("\nCongratulations! You guessed the word correctly! Game over.\n the word was: " + wordForGame);
+					c.println("\nCongratulations! You guessed the word correctly! Game over.\nThe word was: " + wordForGame);
 
 					// this code runs if the word is not completed and equal or over the max amount of guesses 
 				} else if (wordCompleted == false && wrongGuesses >= 6) {
 					c.println("\nYou ran out of tries, Game over.\nThe word was: " + wordForGame);
-
 				}
 
+				// this code prints at the end of the hangman game
 				c.println("\nWould you like to:\n\n1. Return to main screen\n2. Quit");
 				c.print("\nInput: ");
 				endOfGameIn = c.readLine();
@@ -153,7 +154,7 @@ public class ErikPorteuCulminatingProject {
 				// This block of code prints the rules of hangman
 			} else if (mainScreenIn.equals("2") || mainScreenIn.equals("2.") || mainScreenIn.equalsIgnoreCase("Rules")) {
 				c.clear();
-				c.println("Rules:\n\n- Player selects a word difficulty\n- Player is given an image and empty spaces for the word\n- Player needs to guess what the word is by entering one letter that may be in the word"
+				c.println("Rules:\n\n- Player selects a word difficulty\n- Player is given the hangman post and empty spaces for the word\n- Player needs to guess what the word is by entering one letter that may be in the word"
 						+ "\n- If the player fully guesses the word in less than 6 tries, they win\nHappy playing!");
 
 				// This block of code gets input from the user for whether they want to quit the progam, or return to the main screen
@@ -197,10 +198,10 @@ public class ErikPorteuCulminatingProject {
 	 */
 	public static String [] chooseArrayDifficulty (String difficultyChoice) {
 		// These are all the possible arrays
-		String[] easyWords = {"eye", "sail", "fun", "easy", "sleep"};
-		String[] mediumWords = {"halt", "return", "wallow"};
-		String[] hardWords = {"fortuitous", "supercalifragilisticexpialidocious", "opportunistic", "dynamite", "malfeasances", "perspective"};
-		String[] overkillWords = {"crypt", "myths", "flyby", "myrrh"};
+		String[] easyWords = {"eye", "sail", "fun", "easy", "sleep", "jazz", "arms", "leg", "hello", "simple", "fair", "pizza", "steal", "wee"};
+		String[] mediumWords = {"halt", "return", "wallow", "buzzed", "wrecking", "wretched", "impose", "stretch", "curious", "folding", "specific", "frazzled", "frizzled", "equip", "jumbo", "haiku", "complicated"};
+		String[] hardWords = {"fortuitous", "supercalifragilisticexpialidocious", "opportunistic", "dynamite", "malfeasances", "perspective", "galvanized", "einstein", "imperialistic", "interwoven", "ionization", "spectate", "acrimonious", "mnemonic"};
+		String[] overkillWords = {"crypt", "myths", "flyby", "myrrh", "crwth"};
 		String[] arrayChoice = null;
 
 		// This code chooses one of the arrays above for word selection, based on the user input.

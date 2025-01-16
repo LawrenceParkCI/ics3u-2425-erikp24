@@ -100,7 +100,7 @@ public class ErikPorteuCulminatingProject {
 						hangmanPic = wrongGuessDispay(wrongGuesses);
 						c.println(hangmanPic);
 					}
-					
+
 					// This code checks to see if the character that the user inputted is in the word, and then replaces the blank spaces with the char inputted, and prints a line and the ASCII art hangman based off of guesses.
 					if (wordForGame.contains(String.valueOf(letterGuessed)) && alphabetGuessed[letterGuessed - 97] != true) {
 						for (int i = 0; i < wordForGame.length(); i++) {
@@ -111,7 +111,7 @@ public class ErikPorteuCulminatingProject {
 								c.println(hangmanPic);
 							}
 						}
-						
+
 						// this code runs if the character inputted by the user is not in the word
 					} else if (!(wordForGame.contains(String.valueOf(letterGuessed))) && alphabetGuessed[letterGuessed - 97] != true) {
 						wrongGuesses ++;
@@ -120,12 +120,12 @@ public class ErikPorteuCulminatingProject {
 						hangmanPic = wrongGuessDispay(wrongGuesses);
 						c.println(hangmanPic);
 					}
-					
+
 					// this code prints a list of letters that aren't in the word
 					if (!incorrectGuesses.isEmpty()) {
-					    c.println("\nLetters not in word: " + incorrectGuesses);
+						c.println("\nLetters not in word: " + incorrectGuesses);
 					}
-					
+
 					alphabetGuessed[letterGuessed - 97] = true;
 
 					// this code checks to see if the word has any blank spaces '.' remaining

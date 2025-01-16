@@ -31,7 +31,7 @@ public class ErikPorteuCulminatingProject {
 		boolean wordCompleted = false;
 
 		// This code prints the title of the game and ASCII art decals
-		c.setTextColor(Color.blue);
+		c.setTextColor(Color.BLUE);
 		c.println("Developed by Erik Porteu");
 		Thread.sleep(2000);
 		c.println("Welcome to...");
@@ -60,7 +60,8 @@ public class ErikPorteuCulminatingProject {
 				c.println("\n1. Easy\n2. Medium\n3. Hard\n4. Overkill (No vowels)");
 				c.print("\nInput: ");
 				difficultyChoice = c.readLine();
-
+				Thread.sleep(2000);
+				c.clear();
 
 				// the input above is sent to a method which chooses a specific array based off of difficulty, then sends the array to another method that selects one word randomly
 				String[] arrayDifficulty = chooseArrayDifficulty(difficultyChoice);
@@ -92,6 +93,9 @@ public class ErikPorteuCulminatingProject {
 					
 					// This code tracks your input to see if you have entered a letter twice
 					boolean[] alphabetGuessed = new boolean[26];
+					if (alphabetGuessed[letterGuessed - 97] == true) {
+						c.println("You already entered that, try another letter!");
+					}
 					alphabetGuessed[letterGuessed - 97] = true;
 
 					// This code checks to see if the character that the user inputted is in the word, and then replaces the blank spaces with the char inputted, and prints a line and the ASCII art hangman based off of guesses.
@@ -108,14 +112,9 @@ public class ErikPorteuCulminatingProject {
 						// this code runs if the character inputted by the user is not in the word
 					} else {
 						wrongGuesses ++;
-						c.println("\nSorry, thats wrong. (You now have " + (6 - wrongGuesses) + " guesses left)\n");
+						c.println("\nSorry, there's no \'"+ letterGuessed + "\'. (You now have " + (6 - wrongGuesses) + " guesses left)\n");
 						hangmanPic = wrongGuessDispay(wrongGuesses);
 						c.println(hangmanPic);
-					}
-					
-					// This code prints if the user types the same character twice
-					if (alphabetGuessed[letterGuessed - 97] == true) {
-						c.println("You already entered that, try another letter!");
 					}
 
 					// this code checks to see if the word has any blank spaces '.' remaining
@@ -153,7 +152,9 @@ public class ErikPorteuCulminatingProject {
 
 				// This block of code prints the rules of hangman
 			} else if (mainScreenIn.equals("2") || mainScreenIn.equals("2.") || mainScreenIn.equalsIgnoreCase("Rules")) {
-				c.println("\nRules:\n-Blah\n-Blah\n-Blah");
+				c.clear();
+				c.println("Rules:\n\n- Player selects a word difficulty\n- Player is given an image and empty spaces for the word\n- Player needs to guess what the word is by entering one letter that may be in the word"
+						+ "\n- If the player fully guesses the word in less than 6 tries, they win\nHappy playing!");
 
 				// This block of code gets input from the user for whether they want to quit the progam, or return to the main screen
 				c.println("\n1. Return to main screen\n2. Quit");

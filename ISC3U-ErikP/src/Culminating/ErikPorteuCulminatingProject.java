@@ -28,6 +28,7 @@ public class ErikPorteuCulminatingProject {
 		int wrongGuesses = 0;
 		char letterGuessed;
 		boolean wordCompleted = false;
+		String incorrectGuesses = "";
 
 		// This code prints the title of the game and ASCII art decals
 		c.setTextColor(Color.BLUE);
@@ -91,6 +92,7 @@ public class ErikPorteuCulminatingProject {
 					// This code is the scanner input for a character
 					c.print("\n\nInput: ");
 					letterGuessed = c.readLine().toLowerCase().charAt(0);
+					c.clear();
 
 					// This code tracks your input to see if you have entered a letter twice
 					if (alphabetGuessed[letterGuessed - 97] == true) {
@@ -114,9 +116,16 @@ public class ErikPorteuCulminatingProject {
 					} else if (!(wordForGame.contains(String.valueOf(letterGuessed))) && alphabetGuessed[letterGuessed - 97] != true) {
 						wrongGuesses ++;
 						c.println("\nSorry, there's no \'"+ letterGuessed + "\'. (You now have " + (6 - wrongGuesses) + " guesses left)\n");
+						incorrectGuesses += letterGuessed + " ";
 						hangmanPic = wrongGuessDispay(wrongGuesses);
 						c.println(hangmanPic);
 					}
+					
+					// this code prints a list of letters that aren't in the word
+					if (!incorrectGuesses.isEmpty()) {
+					    c.println("\nLetters not in word: " + incorrectGuesses);
+					}
+					
 					alphabetGuessed[letterGuessed - 97] = true;
 
 					// this code checks to see if the word has any blank spaces '.' remaining

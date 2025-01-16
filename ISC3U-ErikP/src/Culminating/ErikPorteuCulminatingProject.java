@@ -150,6 +150,7 @@ public class ErikPorteuCulminatingProject {
 					programRunning = true;
 					wrongGuesses = 0;
 					wordCompleted = false;
+					incorrectGuesses = "";
 
 				} else if (endOfGameIn.equals("2.") || endOfGameIn.equals("2") || endOfGameIn.equalsIgnoreCase("Quit")) {
 					System.exit(0);

@@ -54,6 +54,7 @@ public class ErikPorteuCulminatingProject {
 
 			// This block of code runs the start of the game, where the user can choose its difficulty
 			if (mainScreenIn.equals("1") || mainScreenIn.equals("1.") || mainScreenIn.equalsIgnoreCase("Start")) {
+				c.clear();
 				c.println("\nWould you like to play in:");
 
 				// This code gets input from the user to choose the difficulty of the game
@@ -164,7 +165,7 @@ public class ErikPorteuCulminatingProject {
 				// This block of code prints the rules of hangman
 			} else if (mainScreenIn.equals("2") || mainScreenIn.equals("2.") || mainScreenIn.equalsIgnoreCase("Rules")) {
 				c.clear();
-				c.println("Rules:\n\n- Player selects a word difficulty\n- Player is given the hangman post and empty spaces for the word\n- Player needs to guess what the word is by entering one letter that may be in the word"
+				c.println("\nRules:\n\n- Player selects a word difficulty\n- Player is given the hangman post and empty spaces for the word\n- Player needs to guess what the word is by entering one letter that may be in the word"
 						+ "\n- If the player fully guesses the word in less than 6 tries, they win\nHappy playing!");
 
 				// This block of code gets input from the user for whether they want to quit the progam, or return to the main screen

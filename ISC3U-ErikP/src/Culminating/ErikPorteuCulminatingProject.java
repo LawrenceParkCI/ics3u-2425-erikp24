@@ -69,7 +69,7 @@ public class ErikPorteuCulminatingProject {
 
 				// this code just displays the hangman ASCII art at the start of the game.
 				String hangmanPic = wrongGuessDispay(wrongGuesses);
-				c.println("\n" +hangmanPic);
+				c.println("\n\n" +hangmanPic);
 
 				// this code create a character array to store the blank spaces to guess the word, limited by the length of the wordForGame
 				char[] guessedWord = new char[wordForGame.length()];

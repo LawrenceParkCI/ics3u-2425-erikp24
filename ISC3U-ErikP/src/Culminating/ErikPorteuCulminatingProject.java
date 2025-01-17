@@ -105,12 +105,12 @@ public class ErikPorteuCulminatingProject {
 					if (wordForGame.contains(String.valueOf(letterGuessed)) && alphabetGuessed[letterGuessed - 97] != true) {
 						for (int i = 0; i < wordForGame.length(); i++) {
 							if (wordForGame.charAt(i) == letterGuessed) {
-								guessedWord[i] = letterGuessed;
-								c.println("\nGood guess!\n");
-								hangmanPic = wrongGuessDispay(wrongGuesses);
-								c.println(hangmanPic);
+								guessedWord[i] = letterGuessed;	
 							}
 						}
+						c.println("\nGood guess!\n");
+						hangmanPic = wrongGuessDispay(wrongGuesses);
+						c.println(hangmanPic);
 
 						// this code runs if the character inputted by the user is not in the word
 					} else if (!(wordForGame.contains(String.valueOf(letterGuessed))) && alphabetGuessed[letterGuessed - 97] != true) {

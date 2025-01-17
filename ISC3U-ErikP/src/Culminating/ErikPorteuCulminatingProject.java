@@ -31,10 +31,12 @@ public class ErikPorteuCulminatingProject {
 		String incorrectGuesses = "";
 
 		// This code prints the title of the game and ASCII art decals
+		String name = "";
+		String namePrinter = bigName(name);
 		c.setTextColor(Color.BLUE);
-		c.println("Developed by Erik Porteu");
+		c.println(namePrinter);
 		Thread.sleep(2000);
-		c.println("Welcome to...");
+		c.println("\nWelcome to...");
 		Thread.sleep(2000);
 		while (programRunning != false) {
 			c.clear();
@@ -339,6 +341,21 @@ public class ErikPorteuCulminatingProject {
 
 		return hangmanPic;
 
+	}
+	public static String bigName (String name) {
+		String bigName = " ____                 _                      _   _           \r\n"
+				+ "|  _ \\  _____   _____| | ___  _ __   ___  __| | | |__  _   _ \r\n"
+				+ "| | | |/ _ \\ \\ / / _ \\ |/ _ \\| '_ \\ / _ \\/ _` | | '_ \\| | | |\r\n"
+				+ "| |_| |  __/\\ V /  __/ | (_) | |_) |  __/ (_| | | |_) | |_| |\r\n"
+				+ "|____/ \\___| \\_/ \\___|_|\\___/| .__/ \\___|\\__,_| |_.__/ \\__, |\r\n"
+				+ "                             |_|                       |___/ \r\n"
+				+ " _____      _ _      ____            _                       \r\n"
+				+ "| ____|_ __(_) | __ |  _ \\ ___  _ __| |_ ___ _   _           \r\n"
+				+ "|  _| | '__| | |/ / | |_) / _ \\| '__| __/ _ \\ | | |          \r\n"
+				+ "| |___| |  | |   <  |  __/ (_) | |  | ||  __/ |_| |          \r\n"
+				+ "|_____|_|  |_|_|\\_\\ |_|   \\___/|_|   \\__\\___|\\__,_|          ";
+		return bigName;
+		
 	}
 
 }
